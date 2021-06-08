@@ -4,8 +4,8 @@ const cpu=osu.cpu
 const mem=osu.mem
 const os=osu.os
 
-let cpuOverload=5
-let alertFrequency=1
+let cpuOverload
+let alertFrequency
 
 //Run every 2 second
 setInterval(()=>{
@@ -68,8 +68,8 @@ function secondsToDhms(seconds){
 }
 
 // Send notification
-//function notifyUser(options) {
-  //  new Notification(options.title, options)
+function notifyUser(options) {
+  new Notification(options.title, options)
  // }
   
 // Check how much time has passed since notification
@@ -89,4 +89,4 @@ function runNotify(frequency) {
     } else {
       return false
     }
-  }
+  }}
