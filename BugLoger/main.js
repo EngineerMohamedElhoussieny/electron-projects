@@ -1,6 +1,10 @@
 const path = require('path')
 const url = require('url')
 const { app, BrowserWindow } = require('electron')
+const connectDB=require('./config/db')
+
+// Connect to database
+connectDB()
 
 let mainWindow
 
@@ -14,6 +18,7 @@ if (
 }
 
 function createMainWindow() {
+	console.log('jjhjhjhj');
 	mainWindow = new BrowserWindow({
 		width: isDev ? 1400:1100,
 		height: 800,
