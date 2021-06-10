@@ -21,8 +21,11 @@ const App = () => {
 		  setLogs(JSON.parse(logs))
 		})
 	
-		
-	  }, [])
+		ipcRenderer.on('logs:clear', () => {
+		  setLogs([])
+		  showAlert('Logs Cleared')
+		})
+	  }, [])	
 
 	function addItem(item){
 		if (item.text === '' || item.user === '' || item.priority === '') {
